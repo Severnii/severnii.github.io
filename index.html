@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Все пароли в одном месте и максимально защищены!</title>
+
+<link rel="icon" href="./easy_pass.JPG" type="image/x-icon">
+    <link rel="shortcut icon" href="./easy_pass.JPG" type="image/x-icon">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="wrapper" style="width: 100%; max-width: 600px; margin: 10px auto; padding: 15px;">
+<FONT face="Century Gothic">
+    <h1> <img src="./easy_pass.JPG" width="60" style="float: left; margin: -5px 10px;">Easy Pass!</h1>
+    <hr>
+    <h1>Все пароли в одном месте <br>и максимально защищены!</h1>
+    <p>Теперь Вам не обязательно запоминать кучу разных паролей для разных сайтов. Достаточно запомнить ключевое слово, и Ваш криптостойкий пароль сгенерируется автоматически.</p>
+    <p>Попробуйте <strong>Easy Pass</strong>!</p>
+    <p>Приложение похоже на обычный хранитель паролей, но с одним отличием: <strong>он нигде ничего не хранит</strong>!</p>
+    <p>Вместо того, чтобы запоминать ваши пароли, шифровать их и где-то хранить, Easy Pass просто генерирует его из введенных вами пароля и домена.</p>
+    <p>Приложение ничего никуда не отправляет и может работать оффлайн.</p>
+    <hr>
+    <h3>Попробуйте и убедитесь во всём сами:</h3>
+    <p align="center">
+         <style>
+   .design {
+    display: inline-block; /* Строчно-блочный элемент */
+    padding: 5px 20px; /* Добавляем поля */
+    text-decoration: none; /* Убираем подчёркивание у ссылки */
+    cursor: pointer; /* Курсор в виде руки */
+    background: #deefff; /* Фон для браузеров, не поддерживающих градиент */
+    /* Градиент */
+    background: -moz-linear-gradient(top, #deefff 0%, #F0F8FF 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#deefff), color-stop(100%,#F0F8FF));
+    background: -webkit-linear-gradient(top, #deefff 0%,#F0F8FF 100%);
+    background: -o-linear-gradient(top, #deefff 0%,#F0F8FF 100%);
+    background: -ms-linear-gradient(top, #deefff 0%,#F0F8FF 100%);
+    background: linear-gradient(top, #deefff 0%,#F0F8FF 100%);
+    border-radius: 10px; /* Скругляем уголки */
+    border: 1px solid #0f0606; /* Добавляем синюю рамку */
+    font: 12px/1 Century Gothic
+    color: #060d0c; /* Цвет текста и ссылки */
+   }
+  </style>
+        <a class="design" title="Easy Pass!"
+           href="javascript:(function(h){
+    function generate(s,mp,a) {
+        var salt=mp+s+mp;
+        var alphabet;
+        if(a){
+            alphabet='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*([{}])_+~-'
+                    +'1234567890abcdefghijklmnopqrstuvwxyz!@#$%^&*([{}])_+~-ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        } else {
+            alphabet='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890__--1234567890abcdefghijklmnopqrstuvwxyz__--ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        }
+        var integer,j,temp,i,v,p;
+
+        for (i=alphabet.length-1,v=0,p=0;i>0;i--,v++){
+            v%=salt.length;
+            p+=integer=salt[v].charCodeAt(0);
+            j=(integer+v+p)%i;
+            temp=alphabet[j];
+            alphabet=alphabet.substr(0,j)+alphabet[i]+alphabet.substr(j+1);
+            alphabet=alphabet.substr(0,i)+temp+alphabet.substr(i+1);
+        }
+        return alphabet.substr(1,15);
+    }
+
+    var nw=window.open('','','menubar=no,location=no,resizable=no,scrollbars=no,status=no,width=320,height=250,top='+(screen.height-320)/2+',left='+(screen.width-250)/2);
+
+    if(!nw) {
+        alert('Window blocked!');
+    } else {
+        var d=nw.document;
+        var b=d.body;
+        var s=d.createElement('style');
+        var host=d.createElement('input');
+        var mp=d.createElement('input');
+        var gp=d.createElement('input');
+        var label=d.createElement('label');
+        var chbx=d.createElement('input');
+        var viewPortTag=d.createElement('meta');
+
+        viewPortTag.id='viewport';
+        viewPortTag.name='viewport';
+        viewPortTag.content='width=device-width; initial-scale=1.0;';
+        d.getElementsByTagName('head')[0].appendChild(viewPortTag);
+
+        if(h.indexOf('www.')===0)
+            h=h.substring(4);
+
+        s.innerHTML='input,label{margin:5px auto;display:block;padding:5px;width:200px;outline:none;} input[type=checkbox]{display:inline;margin:0;padding:0;width:20px;}';
+
+        host.value=h;
+        host.placeholder='Site';
+
+        mp.type='Password';
+        mp.placeholder='Master-password';
+
+        gp.placeholder='Generated password';
+        gp.style.border='2px solid #d45729';
+        gp.readOnly=true;
+
+        chbx.type='checkbox';
+        chbx.id='chbx';
+        chbx.setAttribute('checked','checked');
+        label.appendChild(chbx);
+        label.innerHTML+='!@#$%^&*([{_+~-}])';
+
+        host.onkeyup=mp.onkeyup=label.onclick=function(){gp.value=generate(host.value.toLowerCase(),mp.value,d.getElementById('chbx').checked);};
+
+        b.appendChild(s);
+        b.appendChild(host);
+        b.appendChild(mp);
+        b.appendChild(gp);
+        b.appendChild(label);
+        mp.focus();
+
+        d.onkeydown=function(e){if(e.keyCode===27){nw.close();}};
+        nw.onblur=function(e){nw.close();};
+    }
+})(location.hostname);
+           ">
+            Easy Pass!
+        </a>
+    </p>
+    <script type="text/javascript">(function() {
+            if (window.pluso)if (typeof window.pluso.start == "function") return;
+            if (window.ifpluso==undefined) { window.ifpluso = 1;
+                var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+                s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+                var h=d[g]('body')[0];
+                h.appendChild(s);
+            }})();
+    </script>
+
+</div>
+</body>
+</html>
