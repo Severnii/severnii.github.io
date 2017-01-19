@@ -1,23 +1,51 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>@Severnii</title>
-</head>
-<body>
-  <pre>
-<b>Contact</b>
-=======
-<b>Email:</b> <a href="mailto:severnii@openmailbox.org">severnii@openmailbox.org</a>
-<b>Telegram:</b> <a href="https://telegram.me/portb">@portb</a>
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<title>@Severnii</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Raleway:500,200,700" rel="stylesheet">
+<style>
+h1,h2,h3,h4,h5,h6,p,a,li,span{font-family:'Raleway',sans-serif}.resume{background-color:#1f1f1f;min-height:100vh}.resume .main{height:100%;width:1050px;background-color:#fff;padding:0 25px;margin:0 auto}.resume .main .header{border-bottom:2px solid #ddd}.resume .main .header .page-title-container{margin:0 auto;text-align:center;padding-bottom:10px}.resume .main .header .page-title{font-size:48pt;display:inline}.resume .main .header .page-title-first{font-weight:400}.resume .main .header .page-title-last{font-weight:200}.resume .main .header .header-icons{text-align:center}.resume .main .header .header-icons .page-subhead{margin:1rem 15px;display:inline}.resume .main .header .fa{padding-right:10px}.resume .main .indented{padding-left:40px}.resume .main .category-row{padding-bottom:2px}.resume .main .category-row .category{margin-right:10px;padding-left:5px;padding-right:10px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.resume .main .category-row .category-row-title{margin:.4rem 0}.resume .main .category-row .category-title,.resume .main .category-row .category-subtitle{display:inline;margin-top:10px;margin-bottom:5px}.resume .main .category-row .category-bullets{margin-top:5px}.resume .main .category-row p,.resume .main .category-row li{font-size:smaller}sidebar-category:last-of-type .category{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important}category:last-of-type category-item:last-of-type .category{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important}a.page-subhead{color:initial;text-decoration:none}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<b>About me</b>
-========
-Coming soon.
 
-<b>PGP public key </b>
-==============
------BEGIN PGP PUBLIC KEY BLOCK-----
+<script>angular.module("Resume",["ngMaterial"]).component("resume",{transclude:true,template:'<div class="resume">\n    <section class="main" ng-transclude></section>\n  </div>'}).component("resumeHeading",{controllerAs:"r",transclude:true,bindings:{firstName:"@",lastName:"@",website:"@",phone:"@",telegram:"@",email:"@",github:"@",linkedin:"@"},template:'<div class="header">\n    <div class="page-title-container">\n      <h1 class="page-title page-title-first">{{r.firstName}}</h1>\n      <h1 class="page-title page-title-last">{{r.lastName}}</h1>\n    </div>\n    <div class="header-icons">\n      <a ng-if="r.website" class="md-subhead page-subhead" ng-href="https://{{r.website}}" target="_blank">\n        <i class="fa fa-lg fa-code"></i>{{r.website}}\n      </a>\n      <span ng-if="r.phone" class="md-subhead page-subhead">\n        <i class="fa fa-lg fa-phone"></i>{{r.phone}}\n      </span>\n      <a ng-if="r.email" class="md-subhead page-subhead" ng-href="mailto:{{r.email}}" target="_blank">\n        <i class="fa fa-lg fa-envelope"></i>{{r.email}}\n      </a>\n      <a ng-if="r.telegram" class="md-subhead page-subhead" ng-href="https://telegram.me/{{r.telegram}}" target="_blank">\n        </i><i style="font-size:20px" class="fa">&#xf2c6;</i>{{r.telegram}}\n      </a>\n <a ng-if="r.github" class="md-subhead page-subhead" ng-href="https://github.com/{{r.github}}" target="_blank">\n        <i class="fa fa-lg fa-github"></i>{{r.github}}\n      </a>\n      <a ng-if="r.linkedin" class="md-subhead page-subhead" ng-href="https://linkedin.com/in/{{r.linkedin}}" target="_blank">\n        <i class="fa fa-lg fa-linkedin-square"></i>{{r.linkedin}}\n      </a>\n    </div>\n  </div>\n  <ng-transclude></ng-transclude>'}).component("resumeBody",{transclude:true,template:'<div layout="row" ng-transclude></div>'}).component("resumeColumn",{transclude:true,template:"<div ng-transclude></div>"}).component("sidebarCategory",{controllerAs:"r",bindings:{name:"@"},transclude:true,template:'<div flex="" class="category-row">\n    <div class="category">\n      <h5 class="category-row-title">{{r.name}}</h5>\n      <ng-transclude></ng-transclude>\n    </div>\n  </div>'}).component("category",{controllerAs:"r",bindings:{name:"@"},transclude:true,template:'<div flex="" class="category-row">\n    <h4 class="category-row-title">{{r.name}}</h4>\n    <ng-transclude></ng-transclude>\n  </div>'}).component("categoryItem",{controllerAs:"r",bindings:{title:"@",subtitle:"@"},transclude:true,template:'<div class="category">\n      <h5 class="category-title md-body-2">{{r.title}}</h5>&nbsp;\n      <h5 class="category-subtitle md-caption">{{r.subtitle}}</h5>\n      <ul class="category-bullets" ng-transclude></ul>\n  </div>'});
+</script>
+
+</head><body ng-app="Resume" ng-cloak="">
+
+    <resume>
+        <resume-heading first-name="" last-name="Severnii" telegram="@portb" github="Severnii" email="severnii@openmailbox.org" <!--phone="123-456-7890"-->
+        </resume-heading>
+        <resume-body>
+
+       
+
+            <resume-column flex="110">
+                <category name="Skills">
+                    <category-item title="Web Development">
+                        <li><strong>Interests</strong> Information security, search and examination of vulnerabilities</li>
+                        <li><strong>Distributed Systems</strong> My primary OS is Manjaro Linux</li>
+                    </category-item>
+                    <category-item title="Technologies">
+                        <li><strong>Experienced With</strong> Web &amp; Hybrid App Development \ Functional Programming</li>
+                        <li><strong>Programming</strong> C \ Python \ Bash </li>
+                        <li><strong>Databases</strong> MS SQL Server \ MongoDB \ MySQL \ PostgreSQL </li>
+                    </category-item>
+                </category>
+            </resume-column>
+            
+             <resume-column flex="50">
+          <pre>
+              <center>-----BEGIN PGP PUBLIC KEY BLOCK-----</center>
 
 mQINBFh+wzgBEAC4iSCcmyJ+h7dn4XGCTRU5MBBAtaXGJnf9trbntjzsfiInrs0c
 TfUVxPWul+xzyTa+Ubw2crXbpn3v3PUJ+NkIgwW0fIH9smu1PntOC4cVTrdKLB44
@@ -73,4 +101,9 @@ BgJeTePYV6zPtrHW4e0=
 
 
   </pre>
-</body>
+  </resume-column>
+        </resume-body>
+    </resume>
+
+
+</body></html>
